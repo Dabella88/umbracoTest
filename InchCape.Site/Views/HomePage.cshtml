@@ -1,0 +1,36 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "MasterPage.cshtml";
+}
+
+    <!--Carousel-->    
+    <div class="boderBody">         
+            @Html.GetBlockListHtml(Model.CarouselFeatures)
+    </div>
+
+    <div class="">   
+        @await Html.PartialAsync("~/Views/Partials/body/contact.cshtml")
+    </div>
+    
+    <div class="">         
+            @Html.GetBlockListHtml(Model.MiniCarousel)
+    </div>
+
+
+    <!--Card Features-->
+    <div class="container">
+        <div class="row align-items-md-stretch ">            
+            @Html.GetBlockListHtml(Model.CardFeatures)
+        </div>
+    </div>
+
+    <div class="">   
+        @await Html.PartialAsync("~/Views/Partials/body/exploreBody.cshtml")
+    </div>   
+
+
+      <div class="">   
+        @await Html.PartialAsync("~/Views/Partials/body/disclosure.cshtml")
+    </div>  

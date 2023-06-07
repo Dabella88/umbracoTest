@@ -1,0 +1,68 @@
+@inherits UmbracoViewPage<BlockListItem>
+
+    @{
+       var row = (MiniCarouselRow)Model.Content;
+       if(row.MiniCarouselItems == null || !row.MiniCarouselItems.Any()) return;
+       var miniCarouselId = "carousel-" + row.Key;
+    }
+
+<div class="container">
+        <div class="container" style="margin: 0;">
+          <h1 class="title">A Ford vehicle for every lifestyle</h1>
+        </div>
+        <div id="@miniCarouselId" class="carousel miniCarousel" data-bs-ride="carousel">
+          @{
+            var itemCount = row.MiniCarouselItems.Count;
+            <div class="carousel-indicators">
+              @for (var slideIndex = 0; slideIndex < itemCount; slideIndex++)
+              {
+                  var isFirst = slideIndex == 0;
+                  <button type="button" data-bs-target="#@miniCarouselId" data-bs-slide-to="@slideIndex" class="@(isFirst ? "active" : null)" aria-current="@isFirst" aria-label="Slide @(slideIndex + 1)"></button>              
+              }
+            </div>
+          }            
+            <div class="carousel-inner" id="carousel-slide">
+              @{
+                var itemIndex = 0;
+
+                @foreach (var item in row.MiniCarouselItems)
+                {
+                  var rowItem = (MiniCarouselItem)item.Content;
+                  var isFirstSlide = itemIndex == 0;
+                  var hasTitle = !string.IsNullOrWhiteSpace(rowItem.Title);
+
+
+                  <div class="carousel-item @(isFirstSlide ? "active" : null)">
+                    <div class="card">
+                      @if (rowItem.Image != null)
+                      {
+                        <div class="img-wrapper">
+                          <img src="@rowItem.Image.Url()" class="d-block w-100" alt="@rowItem.Image.Name">
+                        </div>
+                      }
+                      @if (hasTitle)
+                      {
+                        <div class="card-img-overlay textCardCarousel">
+                          @if (hasTitle)
+                          {
+                            <h5 class="card-text">@rowItem.Title</h5>
+                            <a href="#">Explore</a>
+                          }      
+                      </div>
+                      }  
+                    </div>                    
+                  </div>
+                  itemIndex++;
+                }                
+              } 
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target=".miniCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target=".miniCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div> 

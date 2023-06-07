@@ -1,0 +1,23 @@
+@inherits UmbracoViewPage<IDisclosure>
+
+    @if (@Model.IsVisibleDisclosure == true)
+    {
+      <div style="padding-top: 20px;" class="container">
+        <div class="bodyDisclo">
+            <h5 style= "color: midnightblue; font-weight: lighter;"data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                DISCLOSURES
+            </h5>
+        </div>
+        <div class="collapse" id="collapseExample">
+            @if (@Model.TextoDisclosure != null)
+            {
+                <div class="card card-body">
+                    @Model.TextoDisclosure
+                </div>
+            }
+            
+        </div>
+    </div>  
+    }
+
+    

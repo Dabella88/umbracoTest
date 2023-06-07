@@ -1,0 +1,70 @@
+@inherits UmbracoViewPage<BlockListItem>
+
+    @{
+       var row = (CarouselRow)Model.Content;
+       if(row.CarouselItems == null || !row.CarouselItems.Any()) return;
+       var carouselId = "carousel-" + row.Key;
+    }
+
+<div class="">
+        <div id="@carouselId" class="carousel slide">
+          @{
+            var itemCount = row.CarouselItems.Count;
+            <div class="carousel-indicators">
+              @for (var slideIndex = 0; slideIndex < itemCount; slideIndex++)
+              {
+                  var isFirst = slideIndex == 0;
+                  <button type="button" data-bs-target="#@carouselId" data-bs-slide-to="@slideIndex" class="@(isFirst ? "active" : null)" aria-current="@isFirst" aria-label="Slide @(slideIndex + 1)"></button>              
+              }
+             </div>
+          }
+          
+            
+            <div class="carousel-inner" style="padding: 0px">
+              @{
+                var itemIndex = 0;
+
+                @foreach (var item in row.CarouselItems)
+                {
+                  var rowItem = (CarouselItem)item.Content;
+                  var isFirstSlide = itemIndex == 0;
+                  var hasTitle = !string.IsNullOrWhiteSpace(rowItem.Title);
+                  var hasDescription = !string.IsNullOrWhiteSpace(rowItem.Description);
+
+
+                  <div class="carousel-item @(isFirstSlide ? "active" : null)">
+                      @if (rowItem.Image != null)
+                      {
+                        <img src="@rowItem.Image.Url()" class="d-block w-100" alt="@rowItem.Image.Name">
+                      }
+                      @if (hasTitle || hasDescription)
+                      {
+                        <div class="carousel-caption text-start">
+                          @if (hasDescription)
+                          {
+                            <p>@rowItem.Description</p>
+                          }
+                          @if (hasTitle)
+                          {
+                            <h2 style="margin:0; padding: 0">@rowItem.Title</h2>
+                          }
+                          
+                          <button class="btn btn-outline-light py-2 fs-5 px-4 mt-2 radiusButton" href="#">Learn more</button>
+                          <button class="btn btn-outline-light py-2 fs-5 px-4 mt-2 radiusButton" href="#">Reserve Now</button>
+                      </div>
+                      }
+                  </div>
+                  itemIndex++;
+                }                
+              } 
+
+            <button class="carousel-control-prev" style="width: 80px;" type="button" data-bs-target="#@carouselId" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" style="width: 80px;" type="button" data-bs-target="#@carouselId" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>

@@ -1,0 +1,13 @@
+@inherits UmbracoViewPage<BlockListItem>
+
+    @{
+        var row = (ImageRow)Model.Content;
+        if(row.Image == null) return;
+    }
+
+<div class="col-md-4 mt-4">
+
+    <img src="@row.Image.Url()" alt="@row.Caption">
+    <h1 class="card-title">@row.Caption</h1>
+
+</div>

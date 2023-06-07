@@ -1,0 +1,29 @@
+@inherits UmbracoViewPage<IExploreProperties>
+
+@if(Model.IsVisibleExplore == true){
+    <div class="container text-center">
+    <div class="card bg-dark text-white cardBody">
+        <img src="https://www.ford.com.ph/content/ford/ph/en_ph/home/jcr:content/par/common_box_182740620/generalParsys/common_box/generalParsys/common_box/generalParsys/billboard/imageComponent/image.imgs.full.high.jpg"
+            class="card-img" alt="...">
+        <div class="card-img-overlay">
+            @if (Model.TituloSeccion != null)
+            {
+                <h1 class="card-title">@Model.TituloSeccion</h1>
+            }
+            
+            <div class="row">
+                @if (Model.NombreBotones != null)
+                {
+                    @foreach (var btn in Model.NombreBotones)
+                    {
+                        <div class="col">
+                            <button class="btn btn-outline-light py-2 fs-5 px-4 radiusButton" href="#">@btn</button>
+                        </div>
+                    }
+                }                
+            </div>
+        </div> 
+    </div>
+</div>
+}
+       

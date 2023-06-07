@@ -1,0 +1,10 @@
+@inherits UmbracoViewPage<IContactProperties>
+
+@if (Model.IsVisible == true)
+{
+    <div class="card contactBody">
+
+            <p class="card-text textContact">@Model.Texto</p>
+  
+    </div>
+}

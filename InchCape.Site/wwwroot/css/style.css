@@ -1,0 +1,310 @@
+/* 
+Estilos NavBar */
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.img{
+width: 100px;
+}
+
+.fonti{
+  color:midnightblue;
+  font-size: 18px;
+  font-weight: 500;    
+  line-height: 1.25;
+  cursor: pointer;
+  padding-right: 30px;
+}
+
+.fonti a:hover{
+color: blue;
+
+}
+
+.dropdown-menu{
+width: 360px;
+text-align: center;
+left: -311px;
+
+}
+
+.dropdown-menu li{
+width: 100px;
+}
+
+.dropIcon{
+font-size: 10px;
+}
+
+.containerDrop{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+list-style: none;
+padding: 20px;
+}
+
+.containerDrop i{
+padding: 18px;
+margin: 20px;
+background-color:midnightblue;
+border-radius: 50%;
+color: #fff;
+font-size: 18px;
+}
+
+.containerDrop p, a {
+font-size: small;
+text-decoration: none;
+color: midnightblue;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #fff; }
+
+.radiusButton{
+    border-radius: 150px;
+    margin-right: 10px;    
+}
+
+.btn:hover{
+    color:blue;
+}
+
+.btn{
+    border-style:double;
+}
+
+.container{
+    width: 100%;
+}
+
+.boderBody{
+    border: 0.1px solid lightgray ;
+}
+
+/* Jumbotron */
+
+.carousel-caption{
+  left: 80px;
+  top: 290px;
+}
+
+.text-start p{
+  font-size: 50px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.text-start h2{
+  font-size: 70px; 
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Minicarousel */
+.carousel-inner {
+  padding: 1em;
+}
+.miniCarousel .card {
+  width: 21em;
+  height: 26em;
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+}
+.miniCarousel .carousel-control-prev,
+.miniCarousel .carousel-control-next {
+  background-color: #e1e1e1;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .miniCarousel .carousel-item {
+    margin-right: 0;
+    flex: 0 0 25%;
+    display: block;
+  }
+  .miniCarousel .carousel-inner {
+    display: flex;
+  }
+}
+.miniCarousel .card .img-wrapper {
+    
+    max-width: 100%;
+    height: 28em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.miniCarousel .card img {
+    max-height: 100%;
+}
+@media (max-width: 767px) {
+  .miniCarousel .card .img-wrapper {
+    height: 20em;
+  }
+}
+
+.miniCarousel .textCardCarousel{
+  color: white;
+  margin-top: 300px;
+} 
+
+.miniCarousel a{
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.miniCarousel a:hover{
+  color: blue;
+}
+
+.miniCarousel .card-title{
+  font-size: 25px;
+}
+
+.miniCarousel .title{
+  color: rgb(2, 2, 95);
+  font-size: 40px;
+  line-height: 2.8675rem;
+  letter-spacing: 0;
+  padding: 60px 60px 60px ;    
+}
+
+.miniCarousel .bodySlider{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* BodyExplore */
+.cardBody{
+  margin-top: 60px;
+}
+
+.card-title{
+  text-align: center; font-size: 40px; padding: 40px
+}
+
+.row1{
+  text-align: center; margin-top:-50px;
+}
+
+
+/* CardFeature */
+.title{
+  color: rgb(2, 2, 95);
+  font-size: 40px;
+  line-height: 2.8675rem;
+  letter-spacing: 0;
+  margin: 60px 60px 60px ;    
+}
+
+.textCard{
+  color: white;
+  top: 250px;
+  padding-left: 10px;
+  font-size: 15px;
+  margin-bottom: 100px;
+}
+
+.spacing{
+  display: flex;
+}
+
+.textCard i{
+  margin-left: 10px;
+}
+
+.textCard a{
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.textCard a:hover, i:hover{
+  color: blue;
+}
+.lisFor{
+  max-width: 200px;
+  margin-right: 5px;
+}
+
+.rowi{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+
+/* Footer */
+.rowIcon, i{
+  font-size: 30px;
+  display: flex;
+  margin-right: 40px;
+}
+
+.linkFooter{
+  display: flex;
+}
+
+.bodyFooter .spacingf{
+  padding-right: 20px;
+  margin-top:  20px;
+  color: midnightblue;
+}
+
+.bodyFooter .spacingf a{
+  color: midnightblue;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.bodyFooter .spacingf p{
+  color: midnightblue;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.quickText{
+  color: midnightblue;
+  font-size: 13px;
+}
+
+.bodyFooter{
+  padding-left: 60px;
+}
+
+.socialM{
+  color: midnightblue;
+}
+
+.contactBody{
+    margin-top: 10px;
+    background-color: rgb(2, 2, 95);
+    padding: 40px;
+    color: #fff;
+    font-size: .875rem;
+    line-height: 1.3125rem;
+    letter-spacing: 0;
+}
+
+/* disclosure */
+.bodyDisclo{
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+.boderBody{
+  border: 0.1px solid lightgray ;
+}

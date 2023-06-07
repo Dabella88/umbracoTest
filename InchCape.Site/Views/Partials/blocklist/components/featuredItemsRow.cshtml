@@ -1,0 +1,39 @@
+@inherits UmbracoViewPage<BlockListItem>
+
+    @{
+       var card = (FeaturedItemsRow)Model.Content;
+       if(card.FeaturedItems == null || !card.FeaturedItems.Any()) return;
+    }
+
+<div class="container" style="margin: 36px">
+    <h1 class="title">@card.Title</h1>
+</div>   
+
+<div class="row align-items-md-stretch ">
+  
+  @foreach(var item in card.FeaturedItems){
+
+        var cardItem = (ImageLinkItem)item.Content;
+
+        <div class="col-md-4 mt-4">
+          <div class="card">
+            @if(cardItem.Image != null){
+              <img src="@cardItem.Image.GetCropUrl(416,518)" class="card-img" alt="...">
+            }
+              
+              <div class="card-img-overlay textCard">
+                @if(cardItem.Title != null){
+                <h1 class="cardPos">@cardItem.Title</h1>
+                }  
+                
+                @if(@cardItem.Description != null){
+                    <p class="card-text">@cardItem.Description</p>
+                }            
+                
+                <a href="" class="card-text">Reserve Now<i class="fa-solid fa-circle-chevron-right fa-sm"></i></a>
+              </div>
+          </div>
+        </div>        
+  }  
+</div>     
+

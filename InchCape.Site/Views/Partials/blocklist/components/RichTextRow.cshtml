@@ -1,0 +1,13 @@
+@inherits UmbracoViewPage<BlockListItem>
+
+    @{
+        var row = (RichTextRow)Model.Content;
+    }
+
+     <div class="col-md-4 mt-4">
+  
+
+                    <h1 class="card-title">@row.Content</h1>
+
+            </div>
+        </div>
